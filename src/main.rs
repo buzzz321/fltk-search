@@ -20,13 +20,16 @@ fn creategui() -> app::App {
     flex_r2.end();
     let mut flex_r3 = Flex::default().size_of_parent().row();
 
-    let mut table = SmartTable::default()
+    let mut table = SmartTable::default().with_size(600, 150)
     .with_opts(TableOpts {
-        rows: 30,
+        rows: 1,
         cols: 2,
         editable: true,
         ..Default::default()
-    });
+    })
+    .size_of(&flex)
+    .center_of(&flex);
+    table.make_resizable(true);
 
     flex_r3.end();
     flex.end();
