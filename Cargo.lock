@@ -44,10 +44,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "fltk-table"
+version = "0.1.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d1fc2fa068f3f2d2f0b16fb0115ff01023cd002dfbc2878fe454b23d42b3848e"
+dependencies = [
+ "fltk",
+]
+
+[[package]]
 name = "fltksearch"
 version = "0.1.0"
 dependencies = [
  "fltk",
+ "fltk-table",
 ]
 
 [[package]]

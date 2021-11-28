@@ -1,4 +1,5 @@
 use fltk::{app, button::Button, frame::Frame, group::Flex, input::Input, prelude::*, window::Window};
+use fltk_table::{SmartTable, TableOpts};
 
 fn creategui() -> app::App {
     let app = app::App::default();
@@ -17,7 +18,20 @@ fn creategui() -> app::App {
     flex_r2.set_size(&mut but_search, 60);
     let mut input_search = Input::default().with_size(300, 40);
     flex_r2.end();
+    let mut flex_r3 = Flex::default().size_of_parent().row();
+
+    let mut table = SmartTable::default()
+    .with_opts(TableOpts {
+        rows: 30,
+        cols: 2,
+        editable: true,
+        ..Default::default()
+    });
+
+    flex_r3.end();
     flex.end();
+
+    wind.resizable(&flex);
     wind.end();
     wind.show();
     app
